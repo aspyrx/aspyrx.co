@@ -1,0 +1,110 @@
+:local(.header) {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    @duration-logo: 1s;
+    @duration-logo-text-show: 0.5s;
+    @height-logo: 30px;
+    @width-logo: 2 * @height-logo * cos(70deg);
+
+    :local(.navigation) {
+        flex: 1;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+
+        a {
+            margin: 0 @spacing-x;
+            font-size: @height-logo;
+            font-weight: @font-weight-light;
+            text-decoration: none;
+            color: @color-text;
+            transition: color 0.2s;
+
+            &:hover {
+                color: @color-text-active;
+            }
+
+            &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    :local(.logoText) {
+        font-size: @height-logo;
+        font-weight: @font-weight-light;
+        overflow: hidden;
+
+        animation-delay: @duration-logo - @duration-logo-text-show;
+        animation-duration: @duration-logo-text-show;
+        animation-fill-mode: both;
+        animation-timing-function: ease-out;
+        animation-name: logoTextShow;
+
+        @keyframes logoTextShow {
+            0% { opacity: 0; transform: translateX(-100%); }
+        }
+    }
+
+    :local(.logo) {
+        position: relative;
+        width: @width-logo;
+        height: @height-logo;
+
+        div {
+            @height-logo-line: 0.1 * @height-logo;
+            background-color: @color-primary;
+            height: @height-logo-line;
+            border-radius: @height-logo-line / 2;
+            animation-duration: @duration-logo;
+            animation-fill-mode: both;
+
+            &:local(.right) {
+                position: absolute;
+                top: calc(~"50%" - @height-logo-line / 2);
+                left: 0;
+                width: @height-logo;
+                animation-name: logoRight;
+
+                @offset-x: @width-logo / 2 * cos(70deg);
+
+                @keyframes logoRight {
+                    0% { left: 50%; width: 0; }
+                    10% { transform: none; }
+                    100% { transform: translateX(@offset-x) rotate(70deg); }
+                }
+            }
+
+            &:local(.left) {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                animation-name: logoLeft;
+                transform-origin: (@height-logo-line / 2) center;
+
+                @keyframes logoLeft {
+                    40% { transform: none; }
+                    100% { transform: rotate(40deg); }
+                }
+            }
+
+            &:local(.middle) {
+                position: absolute;
+                right: 0;
+                width: 100% * cos(70deg) / cos(40deg);
+                animation-name: logoMiddle;
+                transform-origin: calc(~"100%" - (@height-logo-line / 2)) center;
+
+                @keyframes logoMiddle {
+                    70% { transform: none; }
+                    100% { transform: rotate(30deg); }
+                }
+            }
+        }
+    }
+}
+
