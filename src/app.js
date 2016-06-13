@@ -9,10 +9,15 @@ import styles from 'app.less'
 
 function Logo() {
     return <div className={styles.logo}>
-        <div className={styles.right}>
-            <div className={styles.left}>
-                <div className={styles.middle} />
+        <div className={styles.icon}>
+            <div className={styles.right}>
+                <div className={styles.left}>
+                    <div className={styles.middle} />
+                </div>
             </div>
+        </div>
+        <div className={styles.logoText}>
+            <span>SPYRX.CO</span>
         </div>
     </div>;
 }
@@ -20,9 +25,6 @@ function Logo() {
 function Header() {
     return <div className={styles.header}>
         <Logo />
-        <div className={styles.logoText}>
-            <span>SPYRX.CO</span>
-        </div>
         <div className={styles.navigation}>
             <Link to="/" activeClassName="active">home</Link>
         </div>
