@@ -1,4 +1,4 @@
-# aspyrx.github.io
+# aspyrx.co
 My personal website.
 
 ## Usage
