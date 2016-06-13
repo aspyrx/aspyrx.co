@@ -7,7 +7,7 @@
 		"live": "node build.js live",
 		"watch": "node build.js watch",
 		"build": "node build.js",
-        "dist": "node build.js production",
+		"dist": "node build.js production",
 		"prepublish": "node build.js production"
 	},
 	"repository": {
@@ -38,7 +38,8 @@
 		"react-router": "^2.4.1",
 		"style-loader": "^0.13.1",
 		"webpack": "^1.13.0",
-		"extract-text-webpack-plugin": "*"
+		"extract-text-webpack-plugin": "*",
+		"normalize-css": "*"
 	},
 	"devDependencies": {
 		"babel-eslint": "^6.0.4",

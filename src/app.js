@@ -3,16 +3,21 @@
  */
 
 import React, {Component} from 'react';
-import {Router, Route, browserHistory} from 'react-router';
 
-import Index from './pages/index.js';
+import styles from 'app.less'
 
 export default class App extends Component {
+    static get propTypes() {
+        return {
+            children: React.PropTypes.node
+        };
+    }
+
     render() {
         return (
-            <Router history={browserHistory}>
-                <Route path="/" component={Index} />
-            </Router>
+            <div className={styles.container}>
+                {this.props.children}
+            </div>
         );
     }
 }

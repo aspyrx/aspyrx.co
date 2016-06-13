@@ -1,0 +1,17 @@
+@import '~normalize-css/normalize.css';
+@import 'base';
+
+#app {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    background-color: @color-bg;
+    color: @color-text;
+
+    :local(.container) {
+        max-width: 60%;
+    }
+}
+
