@@ -52,7 +52,7 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.(eot|woff|ttf|svg|jpg)$/,
+                test: /\.(eot|woff|ttf|svg|jpg|ico)$/,
                 loader: 'url-loader?limit=10000'
             }
         ]

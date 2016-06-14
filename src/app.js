@@ -7,6 +7,8 @@ import {Link} from 'react-router';
 
 import styles from 'app.less'
 
+import favicon from './images/favicon.ico';
+
 function Logo() {
     return <div className={styles.logo}>
         <div className={styles.icon}>
@@ -36,6 +38,14 @@ export default class App extends Component {
         return {
             children: React.PropTypes.node
         };
+    }
+
+    componentWillMount() {
+        const head = document.getElementsByTagName('head')[0];
+        const iconLink = document.createElement('link');
+        iconLink.rel = 'shortcut icon';
+        iconLink.href = favicon;
+        head.appendChild(iconLink);
     }
 
     render() {
