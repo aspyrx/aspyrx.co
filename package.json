@@ -43,7 +43,8 @@
 		"classnames": "*",
 		"babel-plugin-transform-object-rest-spread": "*",
 		"url-loader": "*",
-		"file-loader": "*"
+		"file-loader": "*",
+		"clean-webpack-plugin": "*"
 	},
 	"devDependencies": {
 		"babel-eslint": "^6.0.4",
