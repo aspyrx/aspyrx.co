@@ -50,6 +50,10 @@
 
             h1 {
                 margin: @spacing-y @spacing-x;
+
+                > span, a {
+                    margin-right: @spacing-x;
+                }
             }
 
             h2 {
@@ -119,15 +123,16 @@
                     text-transform: uppercase;
                 }
 
-                .octicon {
+                :local(.icon) {
                     position: absolute;
                     bottom: 0;
                     right: 0;
+                    font-size: 125%;
                     margin: @spacing-y @spacing-x;
                     transition: font-size 0.2s ease;
 
                     &:hover, &:active {
-                        font-size: 125%;
+                        font-size: 150%;
                     }
                 }
             }

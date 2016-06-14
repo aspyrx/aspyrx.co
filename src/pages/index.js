@@ -3,16 +3,14 @@
  */
 
 import React, {Component} from 'react';
+import classNames from 'classnames';
+import {GithubIcon, FacebookIcon} from '../components/icons.js';
 
 import styles from './index.less';
 
 import avatar from '../images/avatar.jpg';
 
 function Project(props) {
-    Project.propTypes = {
-        project: React.PropTypes.object
-    }
-
     const { project, ...rest } = props;
     const { className, title, href, github } = project;
 
@@ -25,17 +23,22 @@ function Project(props) {
     return <div onClick={open} title={title} {...rest}>
         <div className={className}>
             { github
-                ? <a className="octicon octicon-mark-github"
-                    onClick={(evt) => evt.stopPropagation()}
+                ? <GithubIcon onClick={(evt) => evt.stopPropagation()}
+                    className={styles.icon}
                     href={github}
-                    target="_blank"
                     title="View on Github" />
-                : <span className="octicon octicon-lock"
+                : <span className={classNames('mega-octicon',
+                                              'octicon-lock',
+                                              styles.icon)}
                     title="Sorry, this project's source is private!" />
             }
             <h3 className={styles.title}>{title}</h3>
         </div>
     </div>;
+}
+
+Project.propTypes = {
+    project: React.PropTypes.object
 }
 
 function Projects(props) {
@@ -66,20 +69,6 @@ function Projects(props) {
     </div>;
 }
 
-function FacebookIcon() {
-    return <a className="facebook-icon"
-        href="https://facebook.com/stan.zhang2"
-        target="_blank">
-        <svg viewBox="0 0 216 216" enable-background="new 0 0 216 216">
-            <path d="M204.1,0H11.9C5.3,0,0,5.3,0,11.9v192.2c0,6.6,5.3,11.9,11.9,
-                11.9h103.5v-83.6H87.2V99.8h28.1v-24c0-27.9,17-43.1,
-                41.9-43.1c11.9,0,22.2,0.9,25.2,1.3v29.2l-17.3,0c-13.5,0-16.2,
-                6.4-16.2,15.9v20.8h32.3l-4.2,32.6H149V216h55c6.6,0,11.9-5.3,
-                11.9-11.9V11.9C216,5.3,210.7,0,204.1,0z" />
-        </svg>
-    </a>;
-}
-
 function Bio(props) {
     return <div {...props}>
         <a className={styles.avatar}
@@ -90,9 +79,8 @@ function Bio(props) {
         </a>
         <div>
             <h1>
-                Stan Zhang <a href="https://github.com/aspyrx">
-                    <span className="mega-octicon octicon-mark-github" />
-                </a>
+                <span>Stan Zhang</span>
+                <GithubIcon />
                 <FacebookIcon />
             </h1>
             <h2><a href="https://ece.cmu.edu/" target="_blank">
