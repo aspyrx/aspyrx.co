@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].min.js'
+        filename: '[hash].min.js'
     },
     resolve: {
         root: path.resolve(__dirname, 'src'),
