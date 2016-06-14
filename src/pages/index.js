@@ -42,15 +42,15 @@ function Project(props) {
 function Projects(props) {
     const projects = [
         {
-            title: 'tictactoe',
-            className: styles.tictactoe,
-            href: 'http://3t.aspyrx.co',
-            github: 'https://github.com/aspyrx/tictactoe'
-        }, {
             title: 'audiovisual',
             className: styles.audiovisual,
             href: 'http://av.aspyrx.co',
             github: 'https://github.com/aspyrx/audiovisual'
+        }, {
+            title: 'tictactoe',
+            className: styles.tictactoe,
+            href: 'http://3t.aspyrx.co',
+            github: 'https://github.com/aspyrx/tictactoe'
         }, {
             title: 'Carnegie Mellon Racing',
             className: styles.cmr,

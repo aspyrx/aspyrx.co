@@ -17,7 +17,7 @@ function Logo() {
             </div>
         </div>
         <div className={styles.logoText}>
-            <span>SPYRX.CO</span>
+            <span>SPYRX</span>.co
         </div>
     </div>;
 }
