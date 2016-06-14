@@ -39,7 +39,11 @@
 		"style-loader": "^0.13.1",
 		"webpack": "^1.13.0",
 		"extract-text-webpack-plugin": "*",
-		"normalize-css": "*"
+		"normalize-css": "*",
+		"classnames": "*",
+		"babel-plugin-transform-object-rest-spread": "*",
+		"url-loader": "*",
+		"file-loader": "*"
 	},
 	"devDependencies": {
 		"babel-eslint": "^6.0.4",

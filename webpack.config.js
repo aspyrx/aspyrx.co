@@ -45,6 +45,10 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel'
+            },
+            {
+                test: /\.(eot|woff|ttf|svg)$/,
+                loader: 'url-loader?limit=10000'
             }
         ]
     },

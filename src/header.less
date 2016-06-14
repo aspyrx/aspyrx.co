@@ -6,6 +6,7 @@
 
     @height-logo: 30px;
     @width-logo: 2 * @height-logo * cos(70deg);
+    @duration-header: 0.75s;
 
     :local(.navigation) {
         flex: 1;
@@ -13,19 +14,25 @@
         flex-flow: row wrap;
         align-items: baseline;
 
+        animation-duration: 0.75 * @duration-header;
+        animation-delay: 0.25 * @duration-header;
+        animation-fill-mode: both;
+        animation-name: navigationFadeIn;
+
+        @keyframes navigationFadeIn {
+            0% { opacity: 0; }
+        }
+
         a {
             margin: 0 @spacing-x;
             font-size: @height-logo;
             font-weight: @font-weight-light;
+            border-bottom: 0px solid @color-text-active;
             text-decoration: none;
-            color: @color-text;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
 
-            &:hover {
+            &:hover, &:local(.active) {
                 color: @color-text-active;
-            }
-
-            &.active {
                 text-decoration: underline;
             }
         }
@@ -36,8 +43,8 @@
         align-items: center;
         margin: 0 @spacing-x;
 
-        @duration-logo: 0.75s;
-        @duration-logo-text-show: 0.5s;
+        @duration-logo: @duration-header;
+        @duration-logo-text-show: 0.75 * @duration-header;
 
         :local(.logoText) {
             font-size: @height-logo;
@@ -47,11 +54,10 @@
             animation-delay: @duration-logo - @duration-logo-text-show;
             animation-duration: @duration-logo-text-show;
             animation-fill-mode: both;
-            animation-timing-function: ease-out;
             animation-name: logoTextShow;
 
             @keyframes logoTextShow {
-                0% { opacity: 0; transform: translateX(-100%); }
+                0% { opacity: 0; transform: translateY(-100%); }
             }
         }
 
@@ -69,18 +75,18 @@
                 animation-fill-mode: both;
 
                 &:local(.right) {
+                    @offset-x: @width-logo / 2 * cos(70deg);
+
                     position: absolute;
                     top: calc(~"50%" - @height-logo-line / 2);
                     left: 0;
                     width: @height-logo;
+                    transform: translateX(@offset-x) rotate(70deg);
                     animation-name: logoRight;
 
-                    @offset-x: @width-logo / 2 * cos(70deg);
-
                     @keyframes logoRight {
-                        0% { left: 50%; width: 0; }
+                        0% { left: 50%; width: 0; transform: none; }
                         10% { transform: none; }
-                        100% { transform: translateX(@offset-x) rotate(70deg); }
                     }
                 }
 
@@ -90,10 +96,11 @@
                     width: 100%;
                     animation-name: logoLeft;
                     transform-origin: (@height-logo-line / 2) center;
+                    transform: rotate(40deg);
 
                     @keyframes logoLeft {
+                        0% { transform: none; }
                         40% { transform: none; }
-                        100% { transform: rotate(40deg); }
                     }
                 }
 
@@ -103,10 +110,11 @@
                     width: 100% * cos(70deg) / cos(40deg);
                     animation-name: logoMiddle;
                     transform-origin: calc(~"100%" - (@height-logo-line / 2)) center;
+                    transform: rotate(30deg);
 
                     @keyframes logoMiddle {
+                        0% { transform: none; }
                         70% { transform: none; }
-                        100% { transform: rotate(30deg); }
                     }
                 }
             }

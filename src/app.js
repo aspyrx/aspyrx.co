@@ -26,7 +26,7 @@ function Header() {
     return <div className={styles.header}>
         <Logo />
         <div className={styles.navigation}>
-            <Link to="/" activeClassName="active">home</Link>
+            <Link to="/" activeClassName={styles.active}>home</Link>
         </div>
     </div>;
 }

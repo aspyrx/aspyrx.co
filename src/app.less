@@ -1,25 +1,34 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 @import '~normalize-css/normalize.css';
+@import '../vendor/octicons/octicons';
 @import 'base';
 @import 'header';
 
 #app {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: @font-size;
+    line-height: @line-height;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-
-    background-color: @color-bg;
-    color: @color-text;
+    background-color: @color-bg-light;
 
     :local(.container) {
         flex: 1;
-        max-width: 800px;
+        max-width: @width-container-max;
 
         display: flex;
         flex-flow: column nowrap;
+
+        padding: @spacing-y @spacing-x;
+        box-shadow: 0px 0px 20px black;
+
+        background-color: @color-bg;
+        color: @color-text;
+
+        a {
+            color: @color-text;
+        }
 
         & > div {
             margin: @spacing-y 0;

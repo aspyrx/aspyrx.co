@@ -50,6 +50,10 @@ module.exports = {
                 test: /\.js$/,
                 include: [ path.resolve(__dirname, 'src') ],
                 loader: 'babel'
+            },
+            {
+                test: /\.(eot|woff|ttf|svg)$/,
+                loader: 'url-loader?limit=10000'
             }
         ]
     },
