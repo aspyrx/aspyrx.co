@@ -8,6 +8,10 @@
     @width-logo: 2 * @height-logo * cos(70deg);
     @duration-header: 0.75s;
 
+    a {
+        text-decoration: none;
+    }
+
     :local(.navigation) {
         flex: 1;
         display: flex;
@@ -49,6 +53,7 @@
         :local(.logoText) {
             font-size: @height-logo;
             font-weight: @font-weight-light;
+
             overflow: hidden;
 
             animation-delay: @duration-logo - @duration-logo-text-show;

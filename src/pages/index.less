@@ -8,6 +8,56 @@
         margin: @spacing-y 0;
     }
 
+    :local(.bio) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+
+
+        :local(.avatar) {
+            position: relative;
+
+            img {
+                box-shadow: 0 0 10px black;
+            }
+
+            img, div {
+                border-radius: 50%;
+                margin: @spacing-y @spacing-x;
+                max-height: 8 * @font-size;
+            }
+
+            div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 100%;
+                transition: background-color 0.2s ease;
+            }
+
+            &:hover, &:active {
+                div {
+                    background-color: fade(white, 20%);
+                }
+            }
+        }
+
+        div {
+            flex: 1;
+            min-width: 75%;
+
+            h1 {
+                margin: @spacing-y @spacing-x;
+            }
+
+            h2 {
+                margin: @spacing-y @spacing-x;
+            }
+        }
+    }
+
     :local(.projects) {
         display: flex;
         flex-flow: row wrap;

@@ -24,7 +24,7 @@ function Logo() {
 
 function Header() {
     return <div className={styles.header}>
-        <Logo />
+        <Link to="/"><Logo /></Link>
         <div className={styles.navigation}>
             <Link to="/" activeClassName={styles.active}>home</Link>
         </div>
