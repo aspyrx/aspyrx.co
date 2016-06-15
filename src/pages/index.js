@@ -46,7 +46,7 @@ function Projects(props) {
         {
             title: 'audiovisual',
             className: styles.audiovisual,
-            href: 'http://av.aspyrx.co',
+            href: 'https://av.aspyrx.co',
             github: 'https://github.com/aspyrx/audiovisual'
         }, {
             title: 'tictactoe',
