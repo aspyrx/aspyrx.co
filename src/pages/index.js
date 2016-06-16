@@ -80,8 +80,10 @@ function Bio(props) {
         <div>
             <h1>
                 <span>Stan Zhang</span>
-                <GithubIcon />
-                <FacebookIcon />
+                <span>
+                    <GithubIcon />
+                    <FacebookIcon />
+                </span>
             </h1>
             <h2><a href="https://ece.cmu.edu/" target="_blank">
                     Electrical and Computer Engineering</a> major

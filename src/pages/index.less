@@ -4,7 +4,7 @@
     display: flex;
     flex-flow: column nowrap;
 
-    & > div {
+    > div {
         margin: @spacing-y 0;
     }
 
@@ -49,10 +49,20 @@
             min-width: 75%;
 
             h1 {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
                 margin: @spacing-y @spacing-x;
 
-                > span, a {
-                    margin-right: @spacing-x;
+                > span {
+                    display: flex;
+                    flex-flow: row wrap;
+                    flex-align: center;
+                    margin: 0 @spacing-x;
+
+                    > a {
+                        margin-right: @spacing-x;
+                    }
                 }
             }
 
@@ -90,7 +100,7 @@
                 transform: scale(1.1, 1.1);
             }
 
-            & > div {
+            > div {
                 position: absolute;
                 top: 0;
                 bottom: 0;
