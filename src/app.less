@@ -3,10 +3,6 @@
 @import '../vendor/octicons/octicons';
 @import 'base';
 
-:focus {
-    outline: none;
-}
-
 a {
     color: @color-text;
 }
@@ -19,6 +15,10 @@ a {
     background-color: @color-app-container;
     display: flex;
     justify-content: center;
+
+    :focus {
+        outline: none;
+    }
 
     :local(.containers) {
         flex: 1;
