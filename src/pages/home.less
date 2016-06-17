@@ -20,7 +20,7 @@
                 box-shadow: 0 0 @blur-shadow @spread-shadow @color-shadow;
                 border-radius: 50%;
                 margin: @spacing-y @spacing-x;
-                opacity: 0.9;
+                opacity: 0.95;
                 transition: opacity 0.2s ease;
             }
 
@@ -40,6 +40,18 @@
 
             h1 {
                 font-size: 400%;
+            }
+
+            h2 {
+                font-weight: @font-weight-light;
+
+                a {
+                    font-weight: @font-weight-normal;
+                    text-decoration: none;
+                    &:hover, &:active {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             :local(.icons) {
