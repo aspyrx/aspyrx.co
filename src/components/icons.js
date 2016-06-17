@@ -6,9 +6,9 @@ import styles from './icons.less';
 export function GithubIcon(props) {
     const { className, ...rest } = props;
     const classes = classNames(
-        className,
         'mega-octicon',
-        'octicon-mark-github'
+        'octicon-mark-github',
+        className
     );
 
     return <a className={classes} {...rest} />
