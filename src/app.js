@@ -21,9 +21,13 @@ export default class App extends Component {
     }
 
     render() {
-        return <div className={styles.container}>
-            <Header />
-            {this.props.children}
+        return <div className={styles.containers}>
+            <div className={styles.container}>
+                <Header />
+            </div>
+            <div className={styles.container}>
+                {this.props.children}
+            </div>
         </div>;
     }
 }
