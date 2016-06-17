@@ -1,0 +1,58 @@
+@import '../base';
+
+:local(.container) {
+    display: flex;
+    flex-flow: column nowrap;
+
+    > div {
+        margin: @spacing-y 0;
+    }
+
+    :local(.bio) {
+        display: flex;
+        flex-flow: column;
+
+        :local(.avatar) {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            img {
+                flex: 1;
+                box-shadow: 0 0 10px black;
+                height: auto;
+                max-width: @width-container-max / 2;
+                border-radius: 50%;
+                margin: @spacing-y @spacing-x;
+                opacity: 0.9;
+                transition: opacity 0.2s ease;
+
+                &:hover, &:active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        :local(.text) {
+            text-align: center;
+
+            h1, h2 {
+                margin: @spacing-y @spacing-x;
+            }
+
+            h1 {
+                font-size: 400%;
+            }
+
+            :local(.icons) {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+
+                > a {
+                    margin-right: @spacing-x;
+                }
+            }
+        }
+    }
+}

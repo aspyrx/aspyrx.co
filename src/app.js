@@ -1,7 +1,3 @@
-/*
- * app.js - Bootstraps the React app using React Router.
- */
-
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
@@ -26,9 +22,10 @@ function Logo() {
 
 function Header() {
     return <div className={styles.header}>
-        <Link to="/"><Logo /></Link>
+        <Link to="/home"><Logo /></Link>
         <div className={styles.navigation}>
-            <Link to="/" activeClassName={styles.active}>home</Link>
+            <Link to="/home" activeClassName={styles.active}>home</Link>
+            <Link to="/projects" activeClassName={styles.active}>projects</Link>
         </div>
     </div>;
 }
