@@ -4,6 +4,7 @@ import Header from './components/header';
 import styles from 'app.less'
 
 import favicon from './images/favicon.ico';
+import bg from './images/bg.svg';
 
 export default class App extends Component {
     static get propTypes() {
@@ -22,6 +23,7 @@ export default class App extends Component {
 
     render() {
         return <div className={styles.containers}>
+            <object className={styles.bg} data={bg} type="image/svg+xml" />
             <div className={styles.container}>
                 <Header />
             </div>

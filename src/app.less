@@ -18,14 +18,20 @@ a {
     line-height: @line-height;
     min-height: 100vh;
     background-color: @color-app-container;
-    background-image: url(./images/bg.svg);
-    background-size: cover;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
 
     :focus {
         outline: none;
+    }
+
+    :local(.bg) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
     }
 
     :local(.containers) {
@@ -35,11 +41,13 @@ a {
         flex-flow: column;
 
         :local(.container) {
-            &:first-child {
+            position: relative;
+
+            &:first-of-type {
                 margin-top: 0;
             }
 
-            &:last-child {
+            &:last-of-type {
                 margin-bottom: 0;
             }
 

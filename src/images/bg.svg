@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" preserveAspectRatio="xMidYMid slice">
+<style type="text/css">
+path { transition: opacity 0.2s ease; } path:hover { opacity: 0.8; }
+</style>
 <g stroke-width="1px" transform="translate(0 387.64)" fill-rule="evenodd">
 <g>
 <path d="m0-67.638v-320h320l203.65 1053.1z" stroke="#400000" fill="#400000"/>
