@@ -9,10 +9,6 @@
     @width-logo: 2 * @height-logo * cos(70deg);
     @duration-header: 0.75s;
 
-    a {
-        text-decoration: none;
-    }
-
     :local(.navigation) {
         flex: 1;
         display: flex;
@@ -33,9 +29,10 @@
             margin: 0 @spacing-x;
             font-size: @height-logo;
             font-weight: @font-weight-light;
-            transition: color 0.2s ease;
+            color: @color-text;
+            transition: color @duration-transition;
 
-            &:hover, &:local(.active) {
+            &:hover, &:active, &:local(.active) {
                 color: @color-text-active;
             }
         }
@@ -68,7 +65,8 @@
         :local(.logoText) {
             font-size: @height-logo;
             font-weight: @font-weight-light;
-            transition: color 0.2s ease;
+            color: @color-text;
+            transition: color @duration-transition;
 
             overflow: hidden;
 
@@ -83,6 +81,7 @@
 
             > span {
                 color: @color-primary;
+                transition: color @duration-transition;
             }
         }
 
@@ -98,7 +97,7 @@
                 border-radius: @height-logo-line / 2;
                 animation-duration: @duration-logo;
                 animation-fill-mode: both;
-                transition: background-color 0.2s ease;
+                transition: background-color 0.2s;
 
                 &:local(.right) {
                     @offset-x: @width-logo / 2 * cos(70deg);

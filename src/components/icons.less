@@ -1,13 +1,26 @@
 @import '../base';
 
+.octicon, .mega-octicon {
+    color: @color-text;
+
+    &:hover, &:active {
+        color: @color-primary;
+    }
+}
+
 :local(.facebookIcon) {
     display: inline-block;
     background-color: @color-text;
+    transition: background-color @duration-transition;
     @size: 32px;
     width: @size;
     height: @size;
     position: relative;
     border-radius: 0.1 * @size;
+
+    &:hover, &:active {
+        background-color: @color-primary;
+    }
 
     &:before {
         position: absolute;

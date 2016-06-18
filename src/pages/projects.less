@@ -13,7 +13,7 @@
         margin: @spacing-y @spacing-x;
         box-shadow: 0px 0px @blur-shadow @spread-shadow @color-shadow;
 
-        transition: transform 0.2s ease;
+        transition: transform @duration-transition;
         cursor: pointer;
 
         &:before {
@@ -65,7 +65,7 @@
                 color: white;
 
                 margin: @spacing-y @spacing-x;
-                transition: font-size 0.2s ease;
+                transition: font-size @duration-transition;
 
                 &:hover, &:active {
                     font-size: 150%;
