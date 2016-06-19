@@ -6,5 +6,11 @@ const pages = [
     [Projects, '/projects', 'projects']
 ]
 
+Object.defineProperties(pages, {
+    indexPath: {
+        value: '/home'
+    }
+});
+
 export default pages;
 

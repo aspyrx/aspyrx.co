@@ -29,47 +29,39 @@ Project.propTypes = {
     project: React.PropTypes.object
 }
 
-export default class Projects extends React.Component {
-    static get propTypes() {
-        return { className: React.PropTypes.any };
-    }
-
-    render() {
-        const { className, ...rest } = this.props;
-        const classes = classNames(className, styles.projects);
-        const projects = [
-            {
-                title: 'audiovisual',
-                className: styles.audiovisual,
-                href: 'https://av.aspyrx.co',
-                github: 'https://github.com/aspyrx/audiovisual'
-            }, {
-                title: 'tictactoe',
-                className: styles.tictactoe,
-                href: 'http://3t.aspyrx.co',
-                github: 'https://github.com/aspyrx/tictactoe'
-            }, {
-                title: 'Carnegie Mellon Racing',
-                className: styles.cmr,
-                href: 'https://cmr.aspyrx.co'
-            }
-        ];
-
-        const projectClicked = project => {
-            const { href } = project;
-            if (href) {
-                window.open(href, '_blank');
-            }
+export default function Projects(props) {
+    const projects = [
+        {
+            title: 'audiovisual',
+            className: styles.audiovisual,
+            href: 'https://av.aspyrx.co',
+            github: 'https://github.com/aspyrx/audiovisual'
+        }, {
+            title: 'tictactoe',
+            className: styles.tictactoe,
+            href: 'http://3t.aspyrx.co',
+            github: 'https://github.com/aspyrx/tictactoe'
+        }, {
+            title: 'Carnegie Mellon Racing',
+            className: styles.cmr,
+            href: 'https://cmr.aspyrx.co'
         }
+    ];
 
-        return <div className={classes} {...rest}>
-            {projects.map((project, i) => {
-                return <Project className={styles.project}
-                    key={i}
-                    project={project}
-                    onClick={() => projectClicked(project)} />;
-            })}
-        </div>;
+    const projectClicked = project => {
+        const { href } = project;
+        if (href) {
+            window.open(href, '_blank');
+        }
     }
+
+    return <div className={styles.projects} {...props}>
+        {projects.map((project, i) => {
+            return <Project className={styles.project}
+                key={i}
+                project={project}
+                onClick={() => projectClicked(project)} />;
+        })}
+    </div>;
 }
 

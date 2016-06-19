@@ -2,7 +2,7 @@
  * home.js - Home page for the app.
  */
 
-import React, {Component} from 'react';
+import React from 'react';
 import {GithubIcon, FacebookIcon} from '../components/icons';
 
 import styles from './home.less';
@@ -10,7 +10,7 @@ import styles from './home.less';
 import avatar from '../images/avatar.jpg';
 
 function Bio(props) {
-    return <div {...props}>
+    return <div className={styles.bio} {...props}>
         <a className={styles.avatar}
             href="https://github.com/aspyrx"
             target="_blank">
@@ -36,11 +36,9 @@ function Bio(props) {
     </div>;
 }
 
-export default class Home extends Component {
-    render() {
-        return <div className={styles.container}>
-            <Bio className={styles.bio} />
-        </div>;
-    }
+export default function Home(props) {
+    return <div className={styles.home} {...props}>
+        <Bio />
+    </div>;
 }
 

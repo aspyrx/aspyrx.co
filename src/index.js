@@ -11,7 +11,7 @@ import pages from './pages';
 
 render(<Router history={browserHistory}>
     <Route path="/" component={App}>
-        <IndexRedirect to="home" />
+        <IndexRedirect to={pages.indexPath} />
         {pages.map(([Page, path], i) => {
             return <Route key={i} path={path} component={Page} />
         })}
