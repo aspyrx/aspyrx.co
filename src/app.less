@@ -76,7 +76,7 @@ a {
 
                 :local(.enter) {
                     opacity: 0.001;
-                    transform: translateX(100%);
+                    transform: translateX(-100%);
                 }
 
                 :local(.enterActive) {
@@ -92,7 +92,7 @@ a {
 
                 :local(.leaveActive) {
                     opacity: 0.001;
-                    transform: translateX(-100%);
+                    transform: translateX(100%);
                     transition: all @duration-enter-leave;
                 }
 
@@ -100,7 +100,7 @@ a {
                 &:local(.increase) {
                     :local(.enter) {
                         opacity: 0.001;
-                        transform: translateX(-100%);
+                        transform: translateX(100%);
                     }
 
                     :local(.enterActive) {
@@ -110,7 +110,7 @@ a {
                     }
 
                     :local(.leaveActive) {
-                        transform: translateX(100%);
+                        transform: translateX(-100%);
                     }
                 }
             }
