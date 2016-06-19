@@ -18,13 +18,23 @@ function Logo() {
     </div>;
 }
 
-export default function Header() {
+export default function Header(props) {
+    const { links } = props;
     return <div className={styles.header}>
         <Link to="/home"><Logo /></Link>
         <div className={styles.navigation}>
-            <Link to="/home" activeClassName={styles.active}>home</Link>
-            <Link to="/projects" activeClassName={styles.active}>projects</Link>
+            {links.map(([pathname, title], i) => {
+                return <Link key={i}
+                    to={pathname}
+                    activeClassName={styles.active}>
+                    {title}
+                </Link>;
+            })}
         </div>
     </div>;
+}
+
+Header.propTypes = {
+    links: React.PropTypes.arrayOf(React.PropTypes.array)
 }
 
