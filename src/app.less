@@ -20,6 +20,7 @@ a {
     background-color: @color-app-container;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
     :focus {
         outline: none;
@@ -39,6 +40,7 @@ a {
         max-width: @width-container-max;
         display: flex;
         flex-flow: column;
+        position: relative;
 
         :local(.container) {
             position: relative;
@@ -58,6 +60,28 @@ a {
 
             > div {
                 margin: @spacing-y 0;
+            }
+
+            :local(.enterInc), :local(.appearInc) {
+                opacity: 0.001;
+                transform: translateX(-50%);
+            }
+
+            :local(.enterIncActive), :local(.appearIncActive) {
+                opacity: 1;
+                transform: none;
+                transition: all @duration-enter-leave;
+            }
+
+            :local(.leaveInc) {
+                opacity: 1;
+                transform: none;
+            }
+
+            :local(.leaveIncActive) {
+                opacity: 0.001;
+                transform: translateX(50%);
+                transition: all @duration-enter-leave;
             }
         }
     }

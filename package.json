@@ -44,7 +44,9 @@
 		"babel-plugin-transform-object-rest-spread": "*",
 		"url-loader": "*",
 		"file-loader": "*",
-		"clean-webpack-plugin": "*"
+		"clean-webpack-plugin": "*",
+		"react-addons-css-transition-group": "*",
+		"react-css-transition-replace": "*"
 	},
 	"devDependencies": {
 		"babel-eslint": "^6.0.4",
