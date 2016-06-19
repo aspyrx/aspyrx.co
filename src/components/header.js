@@ -19,11 +19,11 @@ function Logo() {
 }
 
 export default function Header(props) {
-    const { links } = props;
+    const { pages } = props;
     return <div className={styles.header}>
         <Link to="/home"><Logo /></Link>
         <div className={styles.navigation}>
-            {links.map(([pathname, title], i) => {
+            {pages.map(([Page, pathname, title], i) => {
                 return <Link key={i}
                     to={pathname}
                     activeClassName={styles.active}>
@@ -35,6 +35,6 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-    links: React.PropTypes.arrayOf(React.PropTypes.array)
+    pages: React.PropTypes.arrayOf(React.PropTypes.array)
 }
 

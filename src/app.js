@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import classNames from 'classnames';
+import pages from './pages';
 import Header from './components/header';
 
 import styles from 'app.less'
@@ -23,13 +24,8 @@ export default class App extends Component {
             linkIncrease: false
         }
 
-        this.links = [
-            ['/home', 'home'],
-            ['/projects', 'projects']
-        ];
-
         this.linkOrder = {};
-        this.links.map(([pathname], i) => this.linkOrder[pathname] = i);
+        pages.map(([Page, pathname], i) => this.linkOrder[pathname] = i);
     }
 
     componentWillMount() {
@@ -53,7 +49,6 @@ export default class App extends Component {
     }
 
     render() {
-        const { links } = this;
         const { location: { pathname }, children } = this.props;
         const { linkIncrease } = this.state;
         const replaceClass = classNames(styles.replaceAnimated, {
@@ -63,7 +58,7 @@ export default class App extends Component {
         return <div className={styles.containers}>
             <object className={styles.bg} data={bg} type="image/svg+xml" />
             <div className={styles.container}>
-                <Header links={links} />
+                <Header pages={pages} />
             </div>
             <div className={styles.container}>
                 <ReactCSSTransitionReplace className={replaceClass}

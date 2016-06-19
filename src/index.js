@@ -7,14 +7,14 @@ import {render} from 'react-dom';
 import {Router, Route, IndexRedirect, browserHistory} from 'react-router';
 
 import App from './app';
-import Home from './pages/home';
-import Projects from './pages/projects';
+import pages from './pages';
 
 render(<Router history={browserHistory}>
     <Route path="/" component={App}>
         <IndexRedirect to="home" />
-        <Route path="home" component={Home} />
-        <Route path="projects" component={Projects} />
+        {pages.map(([Page, path], i) => {
+            return <Route key={i} path={path} component={Page} />
+        })}
     </Route>
 </Router>, document.getElementById("app"));
 
