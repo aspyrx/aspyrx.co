@@ -45,7 +45,7 @@
 		"url-loader": "^0.5",
 		"file-loader": "^0.8",
 		"clean-webpack-plugin": "^0.1",
-		"react-css-transition-replace": "^1.2"
+		"react-css-transition-replace": "^1.2.0-beta"
 	},
 	"devDependencies": {
 		"babel-eslint": "^6.0.4",
