@@ -14,7 +14,7 @@ import bg from '~/images/bg.svg';
 export default class App extends Component {
     static get propTypes() {
         return {
-            children: React.PropTypes.node,
+            children: React.PropTypes.node.isRequired,
             location: React.PropTypes.object
         };
     }
@@ -77,10 +77,7 @@ export default class App extends Component {
                     transitionEnterTimeout={600}
                     transitionLeaveTimeout={300}
                     overflowHidden={false}>
-                    {children
-                        ? React.cloneElement(children, { key: pathname })
-                        : null
-                    }
+                        {React.cloneElement(children, { key: pathname })}
                 </ReactCSSTransitionReplace>
             </div>
         </div>;

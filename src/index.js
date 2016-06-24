@@ -4,7 +4,10 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, Route, IndexRedirect, browserHistory} from 'react-router';
+import Router from 'react-router/lib/Router';
+import Route from 'react-router/lib/Route';
+import IndexRedirect from 'react-router/lib/IndexRedirect';
+import browserHistory from 'react-router/lib/browserHistory';
 
 import App from '~/app';
 import pages from '~/pages';

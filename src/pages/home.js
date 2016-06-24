@@ -4,30 +4,33 @@
 
 import React from 'react';
 import {GithubIcon, FacebookIcon} from '~/components/icons';
+import onLoadOnce from '~/components/onLoadOnce';
 
 import styles from './home.less';
 
 import avatar from '~/images/avatar.jpg';
+
+const Img = onLoadOnce(function img(props) {
+    return <img {...props} />
+});
 
 function Bio(props) {
     return <div className={styles.bio} {...props}>
         <a className={styles.avatar}
             href="https://github.com/aspyrx"
             target="_blank">
-            <img src={avatar} alt="Stan Zhang" />
+            <Img src={avatar} loadedClass={styles.loaded} />
         </a>
         <div className={styles.text}>
             <h1>Stan Zhang</h1>
-            <h2>
-                <a href="https://ece.cmu.edu/" target="_blank">
+            <h2><a href="https://ece.cmu.edu/" target="_blank">
                     Electrical and Computer Engineering
                 </a>
                 &nbsp;major at&nbsp;
                 <a href="https://www.cmu.edu/" target="_blank">
                     Carnegie Mellon University
                 </a>
-                .
-            </h2>
+                .</h2>
             <span className={styles.icons}>
                 <GithubIcon />
                 <FacebookIcon />
