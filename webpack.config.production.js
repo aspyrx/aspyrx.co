@@ -17,6 +17,7 @@ if (config.module.loaders) {
     for (const l of config.module.loaders) {
         if (l.loader === 'style') {
             l.loader = ExtractTextPlugin.extract('style');
+            delete l.loaders;
         } else if (l.loaders && l.loaders[0] === 'style')  {
             l.loader = ExtractTextPlugin.extract('style', l.loaders.slice(1));
             delete l.loaders;

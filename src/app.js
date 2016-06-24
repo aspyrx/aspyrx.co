@@ -5,6 +5,8 @@ import pages from '~/pages';
 import Header from '~/components/header';
 
 import styles from './app.less'
+import 'normalize-css/normalize.css';
+import '^/octicons/octicons.less';
 
 import favicon from '~/images/favicon.ico';
 import bg from '~/images/bg.svg';

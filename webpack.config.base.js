@@ -14,7 +14,7 @@ module.exports = {
     debug: true,
     context: ctxDir,
     entry: {
-        app: [ srcDir ]
+        app: [srcDir]
     },
     output: {
         path: outDir,
@@ -34,23 +34,38 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                exclude: srcDir,
-                loaders: ['style', 'css', 'postcss']
+                include: [vendorDir, /node_modules/],
+                loaders: ['style', 'css?importLoaders=1', 'postcss']
             },
             {
                 test: /\.less$/,
-                exclude: srcDir,
-                loaders: ['style', 'css', 'postcss', 'less']
+                include: [vendorDir, /node_modules/],
+                loaders: ['style', 'css?importLoaders=2', 'postcss', 'less']
             },
             {
                 test: /\.css$/,
-                include: srcDir,
-                loaders: ['style', 'css?modules&localIdentName=[local]-[hash:base64:5]', 'postcss']
+                include: [srcDir],
+                loaders: [
+                    'style',
+                    'css'
+                        + '?modules'
+                        + '&localIdentName=[local]-[hash:base64:5]'
+                        + '&importLoaders=1',
+                    'postcss'
+                ]
             },
             {
                 test: /\.less$/,
-                include: srcDir,
-                loaders: ['style', 'css?modules&localIdentName=[local]-[hash:base64:5]', 'postcss', 'less']
+                include: [srcDir],
+                loaders: [
+                    'style',
+                    'css'
+                        + '?modules'
+                        + '&localIdentName=[local]-[hash:base64:5]'
+                        + '&importLoaders=2',
+                    'postcss',
+                    'less'
+                ]
             },
             {
                 test: /\.js$/,
