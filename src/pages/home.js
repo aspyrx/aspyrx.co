@@ -45,3 +45,5 @@ export default function Home(props) {
     </div>;
 }
 
+Home.page = [Home, '/home', 'home'];
+

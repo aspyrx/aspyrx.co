@@ -1,16 +1,11 @@
-import Home from './home';
-import Projects from './projects';
+const pagesCtx = require.context('.', false, /^(.(?!index))*\.js$/);
+const pages = [];
 
-const pages = [
-    [Home, '/home', 'home'],
-    [Projects, '/projects', 'projects']
-]
+for (const key of pagesCtx.keys()) {
+    pages.push(pagesCtx.resolve(key));
+}
 
-Object.defineProperties(pages, {
-    indexPath: {
-        value: '/home'
-    }
-});
+pages.indexPath = '/home';
 
 export default pages;
 

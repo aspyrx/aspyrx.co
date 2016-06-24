@@ -65,3 +65,5 @@ export default function Projects(props) {
     </div>;
 }
 
+Projects.page = [Projects, '/projects', 'projects'];
+

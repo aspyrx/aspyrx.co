@@ -12,10 +12,14 @@
     "env": {
         "browser": true
     },
+    "globals": {
+        "require": true
+    },
     "plugins": [
-        "react"
+        "react",
+        "import"
     ],
-    "rules": {
-
+    "settings": {
+        "import/resolver": "webpack"
     }
 }
