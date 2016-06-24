@@ -15,13 +15,6 @@
         transition: transform @duration-transition;
         cursor: pointer;
 
-        animation: projectEnter @duration-enter-leave ease @duration-enter-leave 1 both;
-
-        @keyframes projectEnter {
-            0% { border: 5px solid transparent; }
-            50% { border-color: white; }
-        }
-
         &:before {
             content: "";
             display: block;
