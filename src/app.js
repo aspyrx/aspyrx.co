@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import classNames from 'classnames';
-import pages from './pages';
-import Header from './components/header';
+import pages from '~/pages';
+import Header from '~/components/header';
 
-import styles from 'app.less'
+import styles from './app.less'
 
-import favicon from './images/favicon.ico';
-import bg from './images/bg.svg';
+import favicon from '~/images/favicon.ico';
+import bg from '~/images/bg.svg';
 
 export default class App extends Component {
     static get propTypes() {

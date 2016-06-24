@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import {GithubIcon, FacebookIcon} from '../components/icons';
+import {GithubIcon, FacebookIcon} from '~/components/icons';
 
 import styles from './home.less';
 
-import avatar from '../images/avatar.jpg';
+import avatar from '~/images/avatar.jpg';
 
 function Bio(props) {
     return <div className={styles.bio} {...props}>

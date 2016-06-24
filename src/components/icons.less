@@ -1,6 +1,6 @@
-@import '../base';
+@import '~base';
 
-.octicon, .mega-octicon {
+:global(.octicon), :global(.mega-octicon) {
     color: @color-text;
 
     &:hover, &:active {
@@ -8,7 +8,7 @@
     }
 }
 
-:local(.facebookIcon) {
+.facebookIcon {
     display: inline-block;
     background-color: @color-text;
     transition: background-color @duration-transition;

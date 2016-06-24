@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import {GithubIcon} from '../components/icons';
+import {GithubIcon} from '~/components/icons';
 
 import styles from './projects.less';
 

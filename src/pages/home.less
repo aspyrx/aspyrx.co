@@ -1,6 +1,6 @@
-@import '../base';
+@import '~base';
 
-:local(.home) {
+.home {
     display: flex;
     flex-flow: column nowrap;
 
@@ -8,11 +8,11 @@
         margin: @spacing-y 0;
     }
 
-    :local(.bio) {
+    .bio {
         display: flex;
         flex-flow: column;
 
-        :local(.avatar) {
+        .avatar {
             display: flex;
             justify-content: center;
 
@@ -30,7 +30,7 @@
             }
         }
 
-        :local(.text) {
+        .text {
             text-align: center;
 
             h1, h2 {
@@ -48,7 +48,7 @@
                 }
             }
 
-            :local(.icons) {
+            .icons {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: center;

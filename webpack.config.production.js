@@ -8,9 +8,8 @@ const config = require('./webpack.config.base.js');
 
 config.debug = false;
 
-
-if (!config.plugins) {
-    config.plugins = [];
+if (!config.module) {
+    config.module = {};
 }
 
 // Use ExtractTextPlugin on any loader that uses style-loader
@@ -23,6 +22,10 @@ if (config.module.loaders) {
             delete l.loaders;
         }
     }
+}
+
+if (!config.plugins) {
+    config.plugins = [];
 }
 
 config.plugins.push(

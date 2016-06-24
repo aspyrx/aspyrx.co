@@ -1,6 +1,6 @@
-@import '../base';
+@import '~base';
 
-:local(.header) {
+.header {
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -9,7 +9,7 @@
     @width-logo: 2 * @height-logo * cos(70deg);
     @duration-header: 0.75s;
 
-    :local(.navigation) {
+    .navigation {
         flex: 1;
         display: flex;
         flex-flow: row wrap;
@@ -32,13 +32,13 @@
             color: @color-text;
             transition: color @duration-transition;
 
-            &:hover, &:active, &:local(.active) {
+            &:hover, &:active, &.active {
                 color: @color-text-active;
             }
         }
     }
 
-    :local(.logo) {
+    .logo {
         display: flex;
         align-items: center;
         margin: 0 @spacing-x;
@@ -47,7 +47,7 @@
         @duration-logo-text-show: 0.75 * @duration-header;
 
         &:hover, &:active {
-            :local(.logoText) {
+            .logoText {
                 color: @color-primary;
 
                 > span {
@@ -55,14 +55,14 @@
                 }
             }
 
-            :local(.icon) {
+            .icon {
                 div {
                     background-color: @color-text;
                 }
             }
         }
 
-        :local(.logoText) {
+        .logoText {
             font-size: @height-logo;
             font-weight: @font-weight-light;
             color: @color-text;
@@ -85,7 +85,7 @@
             }
         }
 
-        :local(.icon) {
+        .icon {
             position: relative;
             width: @width-logo;
             height: @height-logo;
@@ -99,7 +99,7 @@
                 animation-fill-mode: both;
                 transition: background-color 0.2s;
 
-                &:local(.right) {
+                &.right {
                     @offset-x: @width-logo / 2 * cos(70deg);
 
                     position: absolute;
@@ -115,7 +115,7 @@
                     }
                 }
 
-                &:local(.left) {
+                &.left {
                     position: absolute;
                     left: 0;
                     width: 100%;
@@ -129,7 +129,7 @@
                     }
                 }
 
-                &:local(.middle) {
+                &.middle {
                     position: absolute;
                     right: 0;
                     width: 100% * cos(70deg) / cos(40deg);
