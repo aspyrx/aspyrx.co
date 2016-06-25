@@ -7,5 +7,8 @@ export default function About(props) {
     </div>
 }
 
-About.page = [About, '/about', 'about'];
+export const page = {
+    path: '/about',
+    title: 'about'
+}
 

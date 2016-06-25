@@ -65,5 +65,8 @@ export default function Projects(props) {
     </div>;
 }
 
-Projects.page = [Projects, '/projects', 'projects'];
+export const page = {
+    path: '/projects',
+    title: 'projects'
+}
 

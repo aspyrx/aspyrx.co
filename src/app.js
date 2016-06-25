@@ -27,7 +27,7 @@ export default class App extends Component {
         }
 
         this.linkOrder = {};
-        pages.map(([Page, pathname], i) => this.linkOrder[pathname] = i);
+        pages.map((module, i) => this.linkOrder[module.page.path] = i);
     }
 
     componentWillMount() {
