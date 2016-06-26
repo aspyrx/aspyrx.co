@@ -1,10 +1,9 @@
 # aspyrx.co
-My personal website.
+My website.
 
 ## Usage
 1. Clone the repo.
 2. Install the dependencies: `npm install`
-    - Or with [ied](https://github.com/alexanderGugel/ied): `ied install`
 
 Several build-related scripts are included that can be run using
 `npm run <script>` (or `ied run <script>`, if you prefer):
