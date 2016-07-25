@@ -14,7 +14,7 @@ if (!config.module) {
 
 // Use ExtractTextPlugin on any loader that uses style-loader
 if (config.module.loaders) {
-    for (const l of config.module.loaders) {
+    config.module.loaders.forEach(function extract(l) {
         if (l.loader === 'style') {
             l.loader = ExtractTextPlugin.extract('style');
             delete l.loaders;
@@ -22,14 +22,25 @@ if (config.module.loaders) {
             l.loader = ExtractTextPlugin.extract('style', l.loaders.slice(1));
             delete l.loaders;
         }
-    }
+    });
 }
+
+if (!config.resolve) {
+    config.resolve = {};
+}
+
+if (!config.resolve.alias) {
+    config.resolve.alias = {}
+}
+
+config.resolve.alias['react'] = 'react-lite';
+config.resolve.alias['react-dom'] = 'react-lite';
 
 if (!config.plugins) {
     config.plugins = [];
 }
 
-config.plugins.push(
+config.plugins.unshift(
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -39,7 +50,7 @@ config.plugins.push(
             'NODE_ENV': JSON.stringify('production')
         }
     }),
-    new ExtractTextPlugin('[hash].min.css', {allChunks: true})
+    new ExtractTextPlugin('[name].[hash].css', {allChunks: true})
 );
 
 module.exports = config;
