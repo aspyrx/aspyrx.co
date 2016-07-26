@@ -2,6 +2,7 @@
 
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ctxDir = path.resolve(__dirname);
@@ -14,11 +15,14 @@ module.exports = {
     debug: true,
     context: ctxDir,
     entry: {
-        app: [srcDir]
+        main: [srcDir],
+        app: [path.resolve(srcDir, 'app')]
     },
     output: {
         path: outDir,
-        filename: '[hash].min.js'
+        publicPath: '/',
+        filename: '[name].[hash].bundle.js',
+        chunkFilename: '[name].[hash].chunk.js'
     },
     resolve: {
         alias: {
@@ -28,6 +32,9 @@ module.exports = {
         root: srcDir,
         extensions: ['', '.js'],
         modulesDirectories: ['node_modules']
+    },
+    resolveLoader: {
+        root: path.resolve(ctxDir, 'node_modules')
     },
     postcss: () => [autoprefixer],
     module: {
@@ -73,12 +80,13 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.(eot|woff|ttf|svg|jpg|ico)$/,
-                loader: 'url-loader?limit=10000'
+                test: /\.(eot|woff|ttf|svg|jpg|png|ico)$/,
+                loader: 'url?limit=10000&name=[path][name].[hash:base64:5].[ext]'
             }
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin('commons.[hash].js'),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             favicon: 'src/images/favicon.ico'

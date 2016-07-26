@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import {render} from 'react-dom';
+import Router from 'react-router/lib/Router';
+import Route from 'react-router/lib/Route';
+import IndexRedirect from 'react-router/lib/IndexRedirect';
+import browserHistory from 'react-router/lib/browserHistory';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import classNames from 'classnames';
 import pages from '~/pages';
@@ -7,8 +12,6 @@ import Header from '~/components/header';
 import styles from './app.less'
 import 'normalize-css/normalize.css';
 import '^/octicons/octicons.less';
-
-import bg from '~/images/bg.svg';
 
 export default class App extends Component {
     static get propTypes() {
@@ -49,7 +52,6 @@ export default class App extends Component {
         });
 
         return <div className={styles.containers}>
-            <object className={styles.bg} data={bg} type="image/svg+xml" />
             <div className={styles.container}>
                 <Header pages={pages} />
             </div>
@@ -74,4 +76,19 @@ export default class App extends Component {
         </div>;
     }
 }
+
+const bundleLoadedEvent = new Event('appBundleLoaded');
+bundleLoadedEvent.renderApp = function renderApp(elem, done)  {
+    render(<Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRedirect to={pages.indexPath} />
+            {pages.map((module, i) => {
+                const { default: Page, page: { path } } = module;
+                return <Route key={i} path={path} component={Page} />
+                })}
+            </Route>
+        </Router>, elem, done);
+};
+
+window.dispatchEvent(bundleLoadedEvent);
 
