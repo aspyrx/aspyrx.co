@@ -1,22 +1,23 @@
-@import '~base';
+@import '~components/base';
 
 .header {
     position: relative;
     display: flex;
     flex-flow: row wrap;
+    margin: @spacing-y @spacing-x;
 
-    @height-logo: 30px;
+    @height-logo: 2 * @font-size;
     @width-logo: 2 * @height-logo * cos(70deg);
 
-    .navigation {
+    > nav {
         flex: 1;
         display: flex;
         flex-flow: row wrap;
         min-width: 75%;
         align-items: baseline;
 
-        animation-duration: 0.75 * @duration-header;
-        animation-delay: 0.25 * @duration-header;
+        animation-duration: 0.75 * @duration-appear;
+        animation-delay: 0.25 * @duration-appear;
         animation-fill-mode: both;
         animation-name: navigationFadeInDown;
 
@@ -31,7 +32,7 @@
             color: @color-text;
             transition: color @duration-transition;
 
-            &:hover, &:active, &.active {
+            &:hover, &:active, &.active, &:focus {
                 color: @color-text-active;
             }
         }
@@ -42,10 +43,10 @@
         align-items: center;
         margin: 0 @spacing-x;
 
-        @duration-logo: @duration-header;
-        @duration-logo-text-show: 0.75 * @duration-header;
+        @duration-logo: @duration-appear;
+        @duration-logo-text-show: 0.75 * @duration-appear;
 
-        &:hover, &:active {
+        &:hover, &:active, &:focus {
             .logoText {
                 color: @color-primary;
 
