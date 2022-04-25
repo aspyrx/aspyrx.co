@@ -18,9 +18,10 @@ const projects = [{
     href: 'https://av.aspyrx.co',
     github: 'https://github.com/aspyrx/audiovisual'
 }, {
-    title: 'Carnegie Mellon Racing',
-    className: styles.cmr,
-    href: 'https://cmr.aspyrx.co'
+    title: 'aspyrx.co',
+    className: styles.aspyrxCo,
+    href: 'https://github.com/aspyrx/aspyrx.co',
+    github: 'https://github.com/aspyrx/aspyrx.co'
 }];
 
 function Project(props) {
