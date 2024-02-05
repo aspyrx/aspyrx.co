@@ -2,8 +2,8 @@ import React from 'react';
 import { shape, string } from 'prop-types';
 import classNames from 'classnames';
 
-import Anchor from '~/components/Anchor';
-import { GithubIcon } from '~/components/icons';
+import Anchor from 'src/components/Anchor';
+import { GithubIcon } from 'src/components/icons';
 
 import styles from './index.less';
 

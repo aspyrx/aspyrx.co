@@ -1,15 +1,22 @@
-@import '~components/base';
+@import 'src/components/base';
 
 .projects {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 
+    margin-block-end: -@spacing-y;
+    margin-inline-end: -@spacing-x;
+
     .project {
+        @max-width: (@width-container-max / 3 - 2 * @spacing-x);
+
         position: relative;
-        flex: 1 0 @width-container-max / 4;
-        max-width: @width-container-max / 3;
-        margin: @spacing-y @spacing-x;
+        flex: 1 1 @max-width;
+        max-width: @max-width;
+        margin-block-end: @spacing-y;
+        margin-inline-end: @spacing-x;
+
         box-shadow: @box-shadow;
 
         transition: transform @duration-transition;
@@ -23,6 +30,7 @@
 
         &:hover, &:active, &:focus {
             transform: scale(1.1, 1.1);
+            z-index: 1;
         }
 
         .button {

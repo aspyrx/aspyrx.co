@@ -1,4 +1,4 @@
-@import '~components/base';
+@import 'src/components/base';
 
 .header {
     position: relative;
@@ -44,7 +44,7 @@
         margin: 0 @spacing-x;
 
         @duration-logo: @duration-appear;
-        @duration-logo-text-show: 0.75 * @duration-appear;
+        @duration-logo-text-show: (0.75 * @duration-appear);
 
         &:hover, &:active, &:focus {
             .logoText {
@@ -70,7 +70,7 @@
 
             overflow: hidden;
 
-            animation-delay: @duration-logo - @duration-logo-text-show;
+            animation-delay: (@duration-logo - @duration-logo-text-show);
             animation-duration: @duration-logo-text-show;
             animation-fill-mode: both;
             animation-name: logoTextShow;
@@ -91,7 +91,7 @@
             height: @height-logo;
 
             div {
-                @height-logo-line: 0.1 * @height-logo;
+                @height-logo-line: (0.1 * @height-logo);
                 background-color: @color-primary;
                 height: @height-logo-line;
                 border-radius: @height-logo-line / 2;
@@ -100,10 +100,10 @@
                 transition: background-color 0.2s;
 
                 &.right {
-                    @offset-x: @width-logo / 2 * cos(70deg);
+                    @offset-x: (@width-logo / 2 * cos(70deg));
 
                     position: absolute;
-                    top: calc(~"50%" - @height-logo-line / 2);
+                    top: calc(~"50%" - (@height-logo-line / 2));
                     left: 0;
                     width: @height-logo;
                     transform: translateX(@offset-x) rotate(70deg);
@@ -132,7 +132,7 @@
                 &.middle {
                     position: absolute;
                     right: 0;
-                    width: 100% * cos(70deg) / cos(40deg);
+                    width: (100% * cos(70deg) / cos(40deg));
                     animation-name: logoMiddle;
                     transform-origin: calc(~"100%" - (@height-logo-line / 2)) center;
                     transform: rotate(30deg);

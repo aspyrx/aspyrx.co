@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { GithubIcon, FacebookIcon } from '~/components/icons';
-import cacheable from '~/components/cacheable';
-import Anchor from '~/components/Anchor';
+import { GithubIcon, FacebookIcon } from 'src/components/icons';
+import cacheable from 'src/components/cacheable';
+import Anchor from 'src/components/Anchor';
 
 import styles from './index.less';
 
@@ -22,9 +22,9 @@ export default function Home() {
         </header>
         <main>
             <h2>
-                <span>Senior MTS, ESXi VMkernel core,&nbsp;</span>
+                <span>Staff Engineer, ESXi VMkernel core,&nbsp;</span>
                 <Anchor href='https://www.vmware.com/'>
-                    VMware
+                    VMware by Broadcom
                 </Anchor>
                 <span>.</span>
             </h2>
